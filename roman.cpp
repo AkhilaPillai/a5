@@ -2,8 +2,8 @@
 using namespace std;
 int main() 
 {
-    int romanToInt(string s) 
-        int r = 0;
+    int romanToInt(string a) 
+        int v = 0;
         map<char, int> roman;
         roman['I'] = 1;
         roman['V'] = 5;
@@ -12,15 +12,15 @@ int main()
         roman['C'] = 100;
         roman['D'] = 500;
         roman['M'] = 1000;
-        for (int i = 0; i < s.length() - 1; i ++) {
-            int cur = roman[s[i]];
-            int next = roman[s[i + 1]];
+        for (int i = 0; i < a.length() - 1; i ++) {
+            int cur = roman[a[i]];
+            int next = roman[a[i + 1]];
             if (cur >= next) {
-                r += cur;
+                v += cur;
             } else {
-                r -= cur;
+                v -= cur;
             }
         }
-        return r + roman[s[s.length() - 1]];
+        return v + roman[a[a.length() - 1]];
 		return 0;
 }
