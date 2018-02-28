@@ -2,7 +2,7 @@
 using namespace std;
 int main() 
 {
-    int romanToInt(string a) 
+    int romanToInt(string n) 
         int v = 0;
         map<char, int> roman;
         roman['I'] = 1;
@@ -12,15 +12,15 @@ int main()
         roman['C'] = 100;
         roman['D'] = 500;
         roman['M'] = 1000;
-        for (int i = 0; i < a.length() - 1; i ++) {
-            int cur = roman[a[i]];
-            int next = roman[a[i + 1]];
+        for (int i = 0; i < n.length() - 1; i ++) {
+            int cur = roman[n[i]];
+            int next = roman[n[i + 1]];
             if (cur >= next) {
                 v += cur;
             } else {
                 v -= cur;
             }
         }
-        return v + roman[a[a.length() - 1]];
+        return v + roman[n[n.length() - 1]];
 		return 0;
 }
