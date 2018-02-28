@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-bool solve(string& a, string& v, int n, int k) {
+bool solve(string& e, string& v, int n, int k) {
 	if(n != k) return false;
 	
 	int hash[26] = {};
@@ -9,14 +9,14 @@ bool solve(string& a, string& v, int n, int k) {
 	
 	for(int i = 0; i < n; i++) {
 		
-		if(hash[a[i] - 'a'] == -1) {
+		if(hash[e[i] - 'a'] == -1) {
 			
 			if(marked[v[i] - 'a']) return false;
 			
 			marked[v[i] - 'a'] = true;
-			hash[a[i] - 'a'] = v[i] - 'a';
+			hash[e[i] - 'a'] = v[i] - 'a';
 		}	
-		else if(hash[a[i] - 'a'] != v[i] - 'a') return false;
+		else if(hash[e[i] - 'a'] != v[i] - 'a') return false;
 	}	
 
 	return true;
@@ -24,13 +24,13 @@ bool solve(string& a, string& v, int n, int k) {
 
 int main() {
 	
-	string a;
+	string e;
 	string v;
 	
-	cin >> a;
+	cin >> e;
 	cin >> v;
 	
-	if(solve(a, v, a.length(), v.length())) cout << "Yes\n";
+	if(solve(e, v, e.length(), v.length())) cout << "Yes\n";
 	else cout << "No\n";
 	
 	return 0;
