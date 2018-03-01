@@ -7,11 +7,11 @@ cout<<"Enter the string:\n";
 cin>>a;
 if(a[0]='S' || a[0]='s')
 {
-cout<<"Holiday";
+cout<<"yes";
 }
 else
 {
-cout<<"Not A Holiday";
+cout<<"No";
 }
 return 0;
 }
